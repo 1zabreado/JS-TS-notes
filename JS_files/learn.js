@@ -1,13 +1,14 @@
-const LOCAL_FORECAST = {
-    today: { min: 24, max: 69 },
-    tomorrow: { min: 15, max: 68 }
+function makeClothing() {
+    class Clothes {
+        constructor (name) {
+            this.name = name;
+        }
+    }
+
+    return Clothes;
 };
 
-function getMaxOfTmrw(getMax) {
-    "use strict";
+const Clothes = makeClothing();
+const y = new Clothes("T-shirt");
 
-    const { tomorrow : { max : maxOfTmrw}} = getMax;
-    return maxOfTmrw;
-}
-
-console.log(getMaxOfTmrw(LOCAL_FORECAST));
+console.log(y.name);
