@@ -1,41 +1,19 @@
-// const user: {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string];
-// } = {
-//     name: "za breado#0001",
-//     age: 16,
-//     hobbies: ["gaming", "anime", "coding"],
-//     role: [2, 'author']
-// };
+type Combinable = number | string;
 
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
+function add(n1: Combinable, n2: Combinable) {
+    let res;
 
-enum Role { ADMIN, READ_ONLY, AUTHOR };
+    if (typeof n1 === 'number' && typeof n2 === 'number') {
+        res = n1 + n2;
+    } else {
+        res = n1.toString() + n2.toString();
+    }
 
-const user = {
-    name: "za breado#0001",
-    age: 16,
-    hobbies: ["gaming", "anime", "coding"],
-    role: Role.ADMIN
-};
-
-// user.role.push('admin'); - this works but not recommended
-// user.role[1] = 10;
-
-let favouriteActivities: string[];
-favouriteActivities = user.hobbies;
-
-console.log(user.name);
-
-for (const hobby of user.hobbies) {
-    console.log(hobby.toUpperCase());
-    // console.log(hobby.map())
+    return res;
 }
 
-if (user.role === Role.ADMIN) {
-    console.log(`${user.name} is an admin`);
-}
+const sum = add(20, 30);
+console.log(sum);
+
+const sumNames = add("George", " Ana");
+console.log(sumNames);
