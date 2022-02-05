@@ -1,14 +1,13 @@
 function add(n1, n2) {
-    var res;
-    if (typeof n1 === 'number' && typeof n2 === 'number') {
-        res = n1 + n2;
-    }
-    else {
-        res = n1.toString() + n2.toString();
-    }
-    return res;
+    return n1 + n2;
 }
-var sum = add(20, 30);
-console.log(sum);
-var sumNames = add("George", " Ana");
-console.log(sumNames);
+function printResult(num) {
+    console.log("Result: " + num);
+}
+printResult(add(5, 10));
+var combinedValues;
+combinedValues = add;
+// combinedValues = printResult;
+// combinedValues = 5;
+console.log(combinedValues(8, 8));
+// let someValue: undefined;
